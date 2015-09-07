@@ -1,0 +1,46 @@
+## Compile Time Options  ##
+MASS
+RHO
+VEL        
+#MOMENTUM  
+#INTENERGY 
+#BFLD       
+#SCALAR_BFLD           // magnetic field strength      
+#NPART
+#SCALARVEL           /* vel^2 */
+#DENSVEL             /* Density weighted velocity */
+#VELDISPERSION
+#VELFILTERED         /* vel filtered on 5 cell cant be used with VELDISPERSION */
+
+## general options ##
+PERIODIC            /* Periodic Boundary Conditions */
+
+#VISIT              /* Visit output */
+
+#TREE               /* Build particle tree (not parallelised, buggy) */
+#HSMLFIND           /* Find Hsml */
+
+#OVERSAMPLING        /* sample SPH kernel 27 times */
+
+OPENMP              /* Use OpenMp threads on machines with shared mem */
+#OMP_FFTW3          /* Use OpenMp in FFT calculations */
+
+## FFT options ##
+FOURIERTRANSFORM    /* Master Switch FFT */
+#HACKFFTW3           /* Hacks fftw_mpi_local_size_many for some cpu/ngrid combis */
+
+KGRID               /* store k values of the grid */
+
+FFT_IDL_NORM        /* sets IDL FFT norm 1/(nx*ny*nz) */
+#FFT_SYM_NORM       /* sets symmetric norm 1/sqrt(nx*ny*nz) */
+
+#FFT_BIG_LAYOUT     /* store redundant data layout (=IDL) */
+
+POWERSPECTRUM      /* compute P(k) on the fly */
+NO_FFT_OUTPUT      /* do not write FFT and kGrid data, only Pk */
+
+#FFT_NO_ZEROPADDING /* no zero padding, also when PERIODIC is not set */
+
+WC6					/* Use WC6 instead of Cubic SPH kernel, when binning SPH */
+
+

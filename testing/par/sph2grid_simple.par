@@ -1,0 +1,33 @@
+%% Sph2Grid Parameter File
+   
+Cosmology 0
+
+%% Image Properties in kpc comoving
+
+Center_X 1500
+Center_Y 1500
+Center_Z 1500
+
+Use_Barycenter 0
+
+GridSize 3000
+GridPoints 128
+
+Input_File data/snap_000
+N_IOTasks 1
+
+NoClobber 0
+Output_File grid_000
+
+UnitLength_in_cm 				3.085678e21        %  1.0 kpc
+UnitMass_in_g 					1.989e43           %  1.0e10 solar masses
+UnitVelocity_in_cm_per_s 	    1e5                %  1 km/sec
+
+Nbins 100
+
+%% Workmodes %%
+%   0 - SPH scheme
+%   1 - NGP scheme
+%   2 - CIC scheme
+%   3 - TSC scheme
+%   4 - D12 scheme

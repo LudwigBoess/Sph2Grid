@@ -1,0 +1,31 @@
+-- sph2grid --
+
+bin SPH particles to a grid.
+
+Requirements: 
+    - GSL
+    - HDF5 
+    - [FFTW >3.3] for P(k)
+    - [SILO] for visit output
+
+
+References:
+Jing 2008, Cui 2009, Jasche 2009
+
+Todo: 
+
+    - P(k)
+        * calc P(k) in parallel
+        * P(k) output in HDF5
+        * adapt readgrid.pro IDL routine
+    
+    - fix / remove wsinc and tsinc distribution schemes
+    
+    - add Cui et al 2008 D12 distribution as the optimal
+      wavelet way to bin sph to a grid. But where to get D12 from?
+
+    - establish testing regression tests in a subdir
+
+
+
+

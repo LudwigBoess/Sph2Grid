@@ -1,0 +1,27 @@
+% Sph2Grid Parameter File
+   
+Cosmology 0
+
+% Image Properties in kpc comoving
+
+Center_X 5000
+Center_Y 5000
+Center_Z 5000
+
+Use_Barycenter 0
+
+GridSize 10000
+GridPoints 100
+
+Input_File ../../snap_070
+N_IOTasks 1
+
+NoClobber 0
+Output_File grid_070
+
+UnitLength_in_cm 				3.085678e21        %  1.0 kpc
+UnitMass_in_g 					1.989e43           %  1.0e10 solar masses
+UnitVelocity_in_cm_per_s 	    1e5                %  1 km/sec
+
+Nbins 100               % POWERSPECTRUM
+
