@@ -6,7 +6,11 @@
 
 #define SKIPF77HEAD  {if(my_fread(&blksize,sizeof(int),1,fd)){swap_Nbyte((char*)&blksize,1,4);}}
 
+#ifdef LONGIDS
+#define UINT sizeof(unsigned long)
+#else 
 #define UINT sizeof(unsigned int)
+#endif
 #define INT sizeof(long)
 #define FLOAT sizeof(float)
 #define DBL sizeof(double)
@@ -630,7 +634,7 @@ void set_block_prop(enum iofields blocknr)
 		break;
 #ifdef VTURB
 	case IO_VELT:
-		Block.Label = "VELT";
+		Block.Label = "VRMS";
 		Block.Name = "Local Turbulent Velocity";
 		Block.Npart[0] = Header.Npart[0];
 		Block.Val_per_element = 1;

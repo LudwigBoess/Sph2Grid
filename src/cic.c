@@ -5,8 +5,7 @@ double cic_part_size(long long ipart)
 	return (0.5 * Cell2kpc);
 }
 
-void
-cic_edge_idx(double px, double py, double pz, double psize,
+void cic_edge_idx(double px, double py, double pz, double psize,
 	     struct Cell_boundary_indices *idx)
 {
 	idx->Xmin = floor(px - psize);
@@ -21,8 +20,7 @@ cic_edge_idx(double px, double py, double pz, double psize,
 	return;
 }
 
-double
-cic_weights(long long ipart, double x, double y, double z,
+double cic_weights(long long ipart, double x, double y, double z,
 	    double px, double py, double pz)
 {
 	return ((1 - fabs(x - px)) * (1 - fabs(y - py)) * 

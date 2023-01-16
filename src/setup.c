@@ -163,11 +163,11 @@ void set_gridfield_prop(enum gridfields field)
 		break;
     case GRID_VTURB:
 #ifdef VTURB
-		GFld.ptr = &Grid[0].VTurb[0];
+		GFld.ptr = &Grid[0].VTurb;
 		GFld.FTptr = &FTGrid.VTurb;
 		GFld.Pkptr = &Pk.VTurb;
-		GFld.rank = 3;
-		strncpy(GFld.name, "VTURB", 4);
+		GFld.rank = 1;
+		strncpy(GFld.name, "VRMS", 4);
 #endif
 		break;
 	case GRID_NPART:
