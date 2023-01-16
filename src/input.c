@@ -630,7 +630,7 @@ void set_block_prop(enum iofields blocknr)
 		break;
 #ifdef VTURB
 	case IO_VELT:
-		Block.Label = "VELT";
+		Block.Label = "VRMS";
 		Block.Name = "Local Turbulent Velocity";
 		Block.Npart[0] = Header.Npart[0];
 		Block.Val_per_element = 1;
