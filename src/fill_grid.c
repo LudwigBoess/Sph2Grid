@@ -116,6 +116,10 @@ static inline void distribute_particle(const float weight, const size_t ipart,
 #ifdef SCALARVEL
 	Grid[idx].VelScalar += length3(P[ipart].Vel) * weight;
 #endif /* SCALARVEL */
+
+#ifdef VTURB
+	Grid[idx].VTurb += Gas[ipart].VTurb * weight;
+#endif
 	
     Grid[idx].Npart++;
 
