@@ -1,6 +1,6 @@
 ## Compile Time Options  ##
 #CIC
-SPH
+#SPH
 MASS
 RHO
 VEL        
@@ -14,9 +14,10 @@ INTENERGY
 #VELDISPERSION
 #VELFILTERED         /* vel filtered on 5 cell cant be used with VELDISPERSION */
 VTURB
+LONGIDS
 
 ## general options ##
-#PERIODIC            /* Periodic Boundary Conditions */
+PERIODIC            /* Periodic Boundary Conditions */
 
 #VISIT              /* Visit output */
 

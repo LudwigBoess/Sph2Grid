@@ -6,7 +6,11 @@
 
 #define SKIPF77HEAD  {if(my_fread(&blksize,sizeof(int),1,fd)){swap_Nbyte((char*)&blksize,1,4);}}
 
+#ifdef LONGIDS
+#define UINT sizeof(unsigned long)
+#else 
 #define UINT sizeof(unsigned int)
+#endif
 #define INT sizeof(long)
 #define FLOAT sizeof(float)
 #define DBL sizeof(double)
