@@ -1,9 +1,11 @@
 ## Compile Time Options  ##
+#CIC
+SPH
 MASS
 RHO
 VEL        
 #MOMENTUM  
-#INTENERGY 
+INTENERGY 
 #BFLD       
 #SCALAR_BFLD           // magnetic field strength      
 #NPART
@@ -11,9 +13,10 @@ VEL
 #DENSVEL             /* Density weighted velocity */
 #VELDISPERSION
 #VELFILTERED         /* vel filtered on 5 cell cant be used with VELDISPERSION */
+VTURB
 
 ## general options ##
-PERIODIC            /* Periodic Boundary Conditions */
+#PERIODIC            /* Periodic Boundary Conditions */
 
 #VISIT              /* Visit output */
 
@@ -31,16 +34,15 @@ FOURIERTRANSFORM    /* Master Switch FFT */
 
 KGRID               /* store k values of the grid */
 
-FFT_IDL_NORM        /* sets IDL FFT norm 1/(nx*ny*nz) */
+#FFT_IDL_NORM        /* sets IDL FFT norm 1/(nx*ny*nz) */
 #FFT_SYM_NORM       /* sets symmetric norm 1/sqrt(nx*ny*nz) */
 
 #FFT_BIG_LAYOUT     /* store redundant data layout (=IDL) */
 
 POWERSPECTRUM      /* compute P(k) on the fly */
-NO_FFT_OUTPUT      /* do not write FFT and kGrid data, only Pk */
+#NO_FFT_OUTPUT      /* do not write FFT and kGrid data, only Pk */
 
 #FFT_NO_ZEROPADDING /* no zero padding, also when PERIODIC is not set */
 
 WC6					/* Use WC6 instead of Cubic SPH kernel, when binning SPH */
-
 
