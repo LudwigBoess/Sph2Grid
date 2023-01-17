@@ -230,6 +230,25 @@ void write_output()
 		free(data);
 #endif
 
+#ifdef MACH
+		printf("Writing MACH \n");
+
+		unit = 1;
+
+		data = (double *) my_malloc(nCells * sizeof(*data));
+		for (i = 0; i < nCells; i++)
+			data[i] = Grid[i].Mach * unit;
+
+		DBAddOption(varOptlist, DBOPT_UNITS, (void *) "");
+
+		DBPutQuadvar1(dbfile, "Mach", "grid", data,
+			      dims, ndims, NULL, 0, DB_DOUBLE, DB_NODECENT,
+			      varOptlist);
+
+		DBClearOption(varOptlist, 0);
+		free(data);
+#endif
+
 		DBClose(dbfile);
 	}
 

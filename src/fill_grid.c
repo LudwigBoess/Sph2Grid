@@ -120,6 +120,10 @@ static inline void distribute_particle(const float weight, const size_t ipart,
 #ifdef VTURB
 	Grid[idx].VTurb += Gas[ipart].VTurb * weight;
 #endif
+
+#ifdef MACH
+	Grid[idx].Mach += Gas[ipart].Mach * weight;
+#endif
 	
     Grid[idx].Npart++;
 

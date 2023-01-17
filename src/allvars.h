@@ -201,6 +201,9 @@ extern struct Gas_Data {
 	float VTurb;		/* Turbulent Velocity */
 	int TNgb;		/* True Number of Neighbours */
 #endif
+#ifdef MACH
+	float Mach;
+#endif
 } *Gas;
 
 /* Grid Variables & Handling */
@@ -225,6 +228,9 @@ extern struct Grid_Data {	/* Uses particle storage layout */
 #endif
 #ifdef VTURB
 	double VTurb;
+#endif
+#ifdef MACH 
+	double Mach;
 #endif
 #ifdef DENSVEL
 	double DensVel[3];	/* Density weighted velocity (Kritsuk+ 07) */
@@ -252,6 +258,7 @@ struct FT_Grid_Data {		/* Uses grid storage layout - no ifdefs */
 	double complex *DensVel[3];
 	double complex *VelScalar;
 	double complex *VelFiltered[3];
+	double complex *Mach;
 	double *kVector[3];
 } FTGrid;
 
@@ -267,6 +274,7 @@ struct powerspectra {
 	double *DensVel;
 	double *VelScalar;
 	double *VelFiltered;
+	double *Mach;
 	double *k;
 } Pk;
 
@@ -296,6 +304,7 @@ enum gridfields {		/* handle presence of grid fields */
 	GRID_SCALARVEL,
 	GRID_VELDISPERSION,
 	GRID_VELFILTERED,
+	GRID_MACH,
 	GRID_LASTENTRY		/* Add above */
 };
 

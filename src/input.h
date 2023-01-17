@@ -28,6 +28,9 @@ enum iofields {
 	IO_VELT,
 	IO_TNGB,
 #endif
+#ifdef MACH
+	IO_MACH,
+#endif
 	IO_LASTENTRY		/* Keep this entry at the end for termination */
 };
 
